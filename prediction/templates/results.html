@@ -1,0 +1,78 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Depression Analysis Result</title>
+
+    <link rel="stylesheet" href="{% static 'css/result.css' %}">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Depression Analysis Result</h1>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Questionnaire Score</h3>
+            <p>{{ quiz_score }} / 27</p>
+        </div>
+
+        <div class="card">
+            <h3>Face Sadness Score</h3>
+            <p>{{ face_score }} %</p>
+        </div>
+
+        <div class="card">
+            <h3>Final Score</h3>
+            <p>{{ final_score }} %</p>
+        </div>
+
+    </div>
+
+    <div class="prediction">
+
+        <h2>Final Prediction</h2>
+
+        <h1>{{ result }}</h1>
+
+    </div>
+
+    <a href="{% url 'dashboard' %}">
+        <button class="hospital-btn">
+            Back to Dashboard
+        </button>
+    </a>
+
+    <div class="chart-container">
+
+        <h2>Face Emotion Analysis</h2>
+
+        <canvas id="emotionChart"></canvas>
+
+    </div>
+
+</div>
+
+
+
+<script>
+const happy = Number("{{ happy|default:0 }}");
+const sad = Number("{{ sad|default:0 }}");
+const neutral = Number("{{ neutral|default:0 }}");
+</script>
+
+
+
+<script src="{% static 'js/result.js' %}"></script>
+
+</body>
+</html>

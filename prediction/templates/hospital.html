@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% load static %}
+
+    <title>Mental Health Support</title>
+
+    <link rel="stylesheet" href="{% static 'css/hosp.css' %}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="card">
+
+            <h1>🧠 Mental Health Support</h1>
+
+            <p class="subtitle">
+                Find nearby Psychologists and Psychiatrists.
+            </p>
+
+            <button id="locationBtn">
+                📍 Use My Current Location
+            </button>
+
+            <div class="divider">
+                <span>OR</span>
+            </div>
+
+            <div id="manualLocation">
+
+                <input
+                    type="text"
+                    id="locationInput"
+                    placeholder="Enter City / Area / Pincode"
+                    autocomplete="off">
+
+                <button id="searchBtn">
+                    Search
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- Loading -->
+
+        <div id="loading" style="display:none;">
+            <p>🔍 Searching nearby mental health specialists...</p>
+        </div>
+
+        <!-- Message -->
+
+        <div id="message"></div>
+
+        <!-- Result Heading -->
+
+        <h2 id="resultTitle"></h2>
+
+        <!-- Hospital Cards -->
+
+        <div id="hospitalContainer"></div>
+
+    </div>
+
+    
+
+    <script src="{% static 'js/hosp.js' %}"></script>
+
+</body>
+
+</html>

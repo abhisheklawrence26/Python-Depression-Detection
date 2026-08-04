@@ -1,0 +1,148 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Mood Log</title>
+
+  
+
+    <link rel="stylesheet" href="{% static 'css/journal.css' %}">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <h1>🌸 Daily Mood Log</h1>
+        <p class="subtitle">Tell us how you're feeling today.</p>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <!-- Mood -->
+            <div class="section">
+                <label>How are you feeling today?</label>
+
+                <div class="mood-options">
+                    <label>
+                        <input type="radio" name="mood" value="Very Happy" required>
+                        😄 <span>Very Happy</span>
+                    </label>
+
+                    <label>
+                        <input type="radio" name="mood" value="Happy">
+                        😊 <span>Happy</span>
+                    </label>
+
+                    <label>
+                        <input type="radio" name="mood" value="Neutral">
+                        😐 <span>Neutral</span>
+                    </label>
+
+                    <label>
+                        <input type="radio" name="mood" value="Sad">
+                        😔 <span>Sad</span>
+                    </label>
+
+                    <label>
+                        <input type="radio" name="mood" value="Very Sad">
+                        😢 <span>Very Sad</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Stress -->
+            <div class="section">
+                <label>Stress Level</label>
+
+                <input type="range"
+                       name="stress"
+                       min="1"
+                       max="5"
+                       value="3"
+                       id="stress">
+
+                <p>Level : <span id="stressValue">3</span>/5</p>
+            </div>
+
+            <!-- Energy -->
+            <div class="section">
+                <label>Energy Level</label>
+
+                <input type="range"
+                       name="energy"
+                       min="1"
+                       max="5"
+                       value="3"
+                       id="energy">
+
+                <p>Level : <span id="energyValue">3</span>/5</p>
+            </div>
+
+            <!-- Sleep -->
+            <div class="section">
+                <label>Sleep Duration</label>
+
+                <select name="sleep" required>
+                    <option value="">Select</option>
+                    <option>Less than 4 Hours</option>
+                    <option>4 - 6 Hours</option>
+                    <option>6 - 8 Hours</option>
+                    <option>More than 8 Hours</option>
+                </select>
+            </div>
+
+            <!-- Activities -->
+            <div class="section">
+
+                <label>Today's Activities</label>
+
+                <div class="activities">
+
+                    <label><input type="checkbox" name="activity" value="Exercise"> Exercise</label>
+
+                    <label><input type="checkbox" name="activity" value="Study"> Study</label>
+
+                    <label><input type="checkbox" name="activity" value="Work"> Work</label>
+
+                    <label><input type="checkbox" name="activity" value="Friends"> Friends</label>
+
+                    <label><input type="checkbox" name="activity" value="Family"> Family</label>
+
+                    <label><input type="checkbox" name="activity" value="Music"> Music</label>
+
+                    <label><input type="checkbox" name="activity" value="Movies"> Movies</label>
+
+                </div>
+
+            </div>
+
+            <!-- Journal -->
+
+            <div class="section">
+
+                <label>Write about your day (Optional)</label>
+
+                <textarea
+                        name="journal"
+                        rows="5"
+                        placeholder="What's on your mind today?"></textarea>
+
+            </div>
+
+            <button type="submit">
+                Save Daily Log
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+<script src="{% static 'js/journal.js' %}"></script>
+
+</body>
+</html>

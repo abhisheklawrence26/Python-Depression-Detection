@@ -1,0 +1,129 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:linear-gradient(135deg,#667eea,#764ba2);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px;
+}
+
+.login-container{
+    width:400px;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,0.2);
+    border-radius:20px;
+    padding:40px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+    animation:fadeIn 0.8s ease;
+}
+
+.login-container h1{
+    text-align:center;
+    color:white;
+    margin-bottom:30px;
+    font-size:32px;
+    font-weight:600;
+}
+
+.login-container label{
+    display:block;
+    color:white;
+    margin-top:15px;
+    margin-bottom:8px;
+    font-size:15px;
+    font-weight:500;
+}
+
+.login-container input{
+    width:100%;
+    padding:12px 15px;
+    border:none;
+    outline:none;
+    border-radius:10px;
+    background:rgba(255,255,255,0.9);
+    font-size:15px;
+    transition:0.3s;
+}
+
+.login-container input:focus{
+    background:#fff;
+    transform:scale(1.02);
+    box-shadow:0 0 8px rgba(255,255,255,0.7);
+}
+
+.login-container input::placeholder{
+    color:#777;
+}
+
+.login-container button{
+    width:100%;
+    margin-top:30px;
+    padding:13px;
+    border:none;
+    border-radius:10px;
+    background:#fff;
+    color:#6a11cb;
+    font-size:17px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.login-container button:hover{
+    background:#6a11cb;
+    color:white;
+    transform:translateY(-2px);
+    box-shadow:0 8px 20px rgba(0,0,0,0.3);
+}
+
+.signup-link{
+    margin-top:20px;
+    text-align:center;
+    color:white;
+    font-size:15px;
+}
+
+.signup-link a{
+    color:#FFD700;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.signup-link a:hover{
+    color:white;
+    text-decoration:underline;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@media(max-width:480px){
+
+    .login-container{
+        width:100%;
+        padding:30px 25px;
+    }
+
+    .login-container h1{
+        font-size:28px;
+    }
+
+}

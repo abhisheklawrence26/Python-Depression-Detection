@@ -1,0 +1,91 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Face Emotion Detection</title>
+
+    <link rel="stylesheet"
+          href="{% static 'css/face.css' %}">
+
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_detection/face_detection.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Face Emotion Analysis</h1>
+
+    <p>
+        Look into the camera and speak about yourself for 1 minute
+    </p>
+
+    <div class="camera-box">
+
+        <video
+    id="video"
+    autoplay
+    playsinline
+></video>
+
+<canvas
+    id="overlay"
+></canvas>
+
+<canvas
+    id="canvas"
+    style="display:none;"
+></canvas>
+
+    </div>
+
+    <div class="timer">
+
+        Time :
+        <span id="time">30</span> sec
+
+    </div>
+
+    <button id="startBtn">
+
+        Start Analysis
+
+    </button>
+
+    <button id="stopBtn">
+
+        Stop
+
+    </button>
+
+    <h2 id="status">
+
+        Waiting...
+
+    </h2>
+
+    <button
+        id="nextBtn"
+        onclick="goNext()"
+        style="display:none;"
+    >
+
+        View Result
+
+    </button>
+
+</div>
+
+<script src="{% static 'js/face.js' %}"></script>
+
+</body>
+
+</html>

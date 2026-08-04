@@ -1,0 +1,128 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindCare AI - Information</title>
+
+    <link rel="stylesheet"
+          href="{% static 'css/information.css' %}">
+</head>
+<body>
+
+<header>
+    <h1>🌿 MindCare AI</h1>
+    <p>Learn Healthy Ways to Reduce Stress & Depression</p>
+</header>
+
+<section class="hero">
+    <h2>Your Mental Health Matters ❤️</h2>
+    <p>
+        Everyone experiences stress and sadness at times.
+        Small daily habits can improve your emotional well-being
+        and help you feel better over time.
+    </p>
+</section>
+
+<div class="container">
+
+    <div class="card">
+        <h2>😌 Ways to Reduce Stress</h2>
+
+        <ul>
+            <li>Practice deep breathing for 5 minutes.</li>
+            <li>Take short breaks while studying or working.</li>
+            <li>Listen to calming music.</li>
+            <li>Spend time in nature.</li>
+            <li>Exercise for at least 30 minutes daily.</li>
+            <li>Drink enough water.</li>
+            <li>Limit social media usage.</li>
+            <li>Sleep 7–9 hours every night.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>💙 Ways to Manage Depression</h2>
+
+        <ul>
+            <li>Talk to someone you trust.</li>
+            <li>Do one enjoyable activity every day.</li>
+            <li>Avoid isolating yourself.</li>
+            <li>Set small daily goals.</li>
+            <li>Maintain a healthy routine.</li>
+            <li>Eat balanced meals.</li>
+            <li>Seek professional help if symptoms continue.</li>
+        </ul>
+    </div>
+
+    <div class="card breathing">
+        <h2>🫁 30 Second Breathing Exercise</h2>
+
+        <div class="circle" id="circle">
+            Breathe
+        </div>
+
+        <p id="breathText">
+            Click Start
+        </p>
+
+        <button id="startBtn">Start Exercise</button>
+    </div>
+
+    <div class="card">
+        <h2>🌸 Healthy Daily Habits</h2>
+
+        <div class="habits">
+
+            <div class="habit">
+                🚶
+                <span>Walk Daily</span>
+            </div>
+
+            <div class="habit">
+                💧
+                <span>Drink Water</span>
+            </div>
+
+            <div class="habit">
+                🥗
+                <span>Healthy Food</span>
+            </div>
+
+            <div class="habit">
+                😴
+                <span>Good Sleep</span>
+            </div>
+
+            <div class="habit">
+                📖
+                <span>Read Books</span>
+            </div>
+
+            <div class="habit">
+                🧘
+                <span>Meditation</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="card warning">
+        <h2>⚠ Remember</h2>
+
+        <p>
+            If you feel hopeless, have thoughts of harming yourself,
+            or your symptoms last for several weeks,
+            please talk to a mental health professional or
+            visit the nearest hospital immediately.
+        </p>
+    </div>
+
+</div>
+
+<script src="{% static 'js/information.js' %}"></script>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindCare AI - Dashboard</title>
+
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>MindCare AI</h1>
+    <h2>Welcome {{ username }}</h2>
+
+    <div class="cards">
+
+        <a href="{% url 'quiz' %}">
+            <div class="card">
+                <h3>Depression Quiz</h3>
+                <p>Start PHQ-9 Assessment</p>
+            </div>
+        </a>
+
+        <a href="{% url 'face' %}">
+            <div class="card">
+                <h3>Face & Voice</h3>
+                <p>Start Analysis</p>
+            </div>
+        </a>
+
+        <a href="{% url 'result' %}">
+            <div class="card">
+                <h3>Results</h3>
+                <p>View Assessment</p>
+            </div>
+        </a>
+
+        <a href="{% url 'hospital' %}">
+            <div class="card">
+                <h3>Hospitals</h3>
+                <p>Nearby Mental Health Clinics</p>
+            </div>
+        </a>
+
+        <a href="{% url 'journal' %}">
+    <div class="card">
+        <h3>Journal</h3>
+        <p>Write Today's Thoughts</p>
+    </div>
+        </a>
+        <a href="{% url 'information' %}">
+            <div class="card">
+                <h3>Information</h3>
+                <p>Know About Mental Health</p>
+            </div>
+        </a>
+
+    </div>
+
+    <button onclick="logout()">Logout</button>
+
+</div>
+
+<script src="{% static 'js/dashboard.js' %}"></script>
+
+</body>
+</html>
